@@ -189,6 +189,37 @@ window.addEventListener('load', () => {
 // redirección tras pulsar la carpeta
 carpeta.addEventListener('click', () => { setTimeout(() => { window.location.href = 'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q'; }, 3000); });
 
-</script></body>
+</script>
+  
+  <audio id="miAudio" loop>
+    <source src="https://audio.jukehost.co.uk/Rj1pSzAT6mcnnwdjp91MD0sLtMSV0knM.mp3" type="audio/mpeg">
+    
+  </audio>
 
+  <script>
+    const audio = document.getElementById('miAudio');
+
+    // Intento de autoplay
+    function iniciarAudio() {
+      audio.play().catch(() => {
+        console.log("Autoplay bloqueado. Esperando interacción del usuario...");
+      });
+    }
+
+    // Intentamos reproducir al cargar la página
+    window.addEventListener('load', iniciarAudio);
+
+    // Forzamos reproducción al primer clic/tap si no se reprodujo automáticamente
+    window.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+    window.addEventListener('touchstart', () => {
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+  </script>
+</body>
 </html>
