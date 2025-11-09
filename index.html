@@ -187,7 +187,7 @@ window.addEventListener('load', () => {
 });
 
 // redirección tras pulsar la carpeta
-carpeta.addEventListener('click', () => { setTimeout(() => { window.location.href = 'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q'; }, 3000); });
+carpeta.addEventListener('click', () => { setTimeout(() => { window.open('https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q','_blank'); }, 3000); });
 
 </script>
   
@@ -221,5 +221,11 @@ carpeta.addEventListener('click', () => { setTimeout(() => { window.location.hre
       }
     });
   </script>
+  
+  <script>
+    // Se ejecuta cuando el DOM está listo
+    alert('Esta página reproduce música de fondo en segundo plano para una mejor experiencia de lectura.\n\nRecuerde que puede optar por el control de volumen de su dispositivo.\n\nRecuerde cerrar completamente esta página para que la reproducción se cierre.\n\nPuede hacer uso de auriculares para una mejor experiencia.');
+  </script>
+  
 </body>
 </html>
