@@ -32,7 +32,7 @@ body {
               radial-gradient(1000px 700px at 50% 100%, rgba(56,189,248,.20), transparent 55%),
               linear-gradient(180deg, rgb(7 9 14), rgb(12 14 22));
   background-attachment: fixed;
-  padding-top: clamp(120px, 10vh, 120px);
+  padding-top: clamp(72px, 10vh, 120px);
 }/* CABECERA TRANSLÚCIDA */ .glass-header { --mx: 50%; --my: 50%; position: fixed; top: 0; left: 0; right: 0; height: clamp(72px, 50vh, 120px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding: 12px clamp(16px, 5vw, 48px); z-index: 50; background: color-mix(in oklab, rgba(var(--bg)/var(--glass-alpha)), transparent); backdrop-filter: saturate(160%) blur(var(--blur)); -webkit-backdrop-filter: saturate(160%) blur(var(--blur)); border-bottom: 1px solid color-mix(in oklab, rgba(var(--ink)/.08), transparent); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px rgba(0,0,0,.06); overflow: clip; isolation: isolate; transform: translateY(-50px); opacity: 0; visibility: hidden; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease, visibility 0s linear 0.8s; }
 
 .glass-header.show { transform: translateY(0); opacity: 1; visibility: visible; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease; }
