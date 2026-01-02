@@ -175,15 +175,39 @@ fill: none;
 display: block;
 }
 
+    /* BOTONES CABECERA */
+    .header-buttons button {
+      padding: 0.5em 0.5em;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 100;
+      font-size: 12px;
+      font-family: 'Product Sans', sans-serif;
+      transition: transform 0.2s ease;
+      white-space: ;
+    }
+
+    .header-buttons button:hover {
+      transform: scale(1.05);
+    }
+    
   </style>  
 </head>  
 <body>  <div id="luma-bg">  
   <div class="luma-blob b1"></div>  
   <div class="luma-blob b3"></div>  
 </div>    <!-- CABECERA -->    <header class="glass-header" id="cabecera">  
-    <div class="brand">Oracle System</div> 
- 
+    <div class="brand">Oracle System
 
+    
+    </div> 
+
+    <!-- BOTONES DE REDIRECCIÓN -->
+<div class="header-buttons" style="display: flex; flex-direction: left; gap: ; grid-column: 1;">
+  <button style="background-color:#0000007a; color:#fff;" onclick="window.location.href='https://oraclewebeflow.netlify.app/'">E-Flow</button>
+  <button style="background-color:#0000007a; color:#fff;" onclick="window.location.href='https://oraclewebemaster.netlify.app/'">E-Master</button>
+</div>
     
     <div class="wrapper">  
     
@@ -304,7 +328,11 @@ setInterval(setTime, 1000);
         </div>  
       </div>  
     </div>  
-  </main>  <!-- FOOTER -->  <footer id="footer">  
+  </main> 
+  
+
+
+  <!-- FOOTER -->  <footer id="footer">  
     &copy; 2025 Oracle Quantum. Powered by Oracle. - Todos los derechos reservados.  
   </footer>  <!-- SCRIPT -->  <script>  
     function throttle(fn, wait){  
