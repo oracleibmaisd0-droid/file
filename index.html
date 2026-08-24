@@ -515,8 +515,29 @@ carpeta.classList.add('show'); // activa el pop-in de la carpeta
 }, 200);
 });
 
-// redirección tras pulsar la carpeta
-carpeta.addEventListener('click', () => { setTimeout(() => { window.location.href = 'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q'; }, 3000); });
+// Redirección tras pulsar la carpeta
+carpeta.addEventListener('click', () => {
+
+  // Esperar 3 segundos antes de mostrar el mensaje
+  setTimeout(() => {
+
+    const confirmar = confirm(
+      "MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nTambién puede buscar en la web; MEGA para escritorio.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↓ (Flecha hacia abajo).\n\n¿Desea descargar la aplicación de MEGA?"
+    );
+
+    if (confirmar) {
+      // ACEPTAR → Google
+      window.location.href = 'https://mega.io/es/mobile';
+
+    } else {
+      // CANCELAR → Mega
+      window.location.href =
+        'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q';
+    }
+
+  }, 3000);
+
+});
 
 </script>
 
