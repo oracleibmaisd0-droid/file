@@ -522,23 +522,55 @@ carpeta.addEventListener('click', () => {
   setTimeout(() => {
 
     const confirmar = confirm(
-      "MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nTambién puede buscar en la web; MEGA para escritorio.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↓ (Flecha hacia abajo).\n\n¿Desea descargar la aplicación de MEGA?"
+      "MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↓ (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
     );
 
     if (confirmar) {
-      // ACEPTAR → Google
-      window.location.href = 'https://mega.io/es/mobile';
+
+      // ACEPTAR → descargar MEGA según el dispositivo
+      descargarMEGA();
 
     } else {
-      // CANCELAR → Mega
+
+      // CANCELAR → abrir directamente la URL de la carpeta
+      // MEGA decidirá automáticamente si abrir la aplicación
+      // o continuar en el navegador.
       window.location.href =
         'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q';
+
     }
 
   }, 3000);
 
 });
 
+
+// ========================================
+// DESCARGAR MEGA SEGÚN EL DISPOSITIVO
+// ========================================
+
+function descargarMEGA() {
+
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  // ANDROID
+  if (/Android/i.test(ua)) {
+    window.location.href =
+      'https://play.google.com/store/apps/details?id=mega.privacy.android.app';
+    return;
+  }
+
+  // iPHONE / iPAD / iPOD
+  if (/iPhone|iPad|iPod/i.test(ua)) {
+    window.location.href =
+      'https://apps.apple.com/es/app/mega-nube-segura-y-cifrada/id706857885';
+    return;
+  }
+
+  // ORDENADOR
+  window.location.href =
+    'https://mega.io/desktop';
+}
 </script>
 
 </body>
