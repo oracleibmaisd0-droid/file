@@ -140,7 +140,7 @@ main { flex-grow: 1; display: flex; justify-content: center; align-items: center
 
 .wrapper {
   position: absolute;
-  right: 150px;
+  right: 50px;
   top: 25%;
   transform: translateY(-50%);
   margin: 0;  
@@ -395,20 +395,6 @@ setTime();
 setInterval(setTime, 1000);  
 </script> 
 
-<iframe
-  src="https://api.wo-cloud.com/content/widget/?geoObjectKey=14330403&language=es&region=GB&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=metric&temperatureUnit=celsius"
-  style="
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    border-radius: 14px;
-    border: none;
-    z-index: 9999;
-  ">
-</iframe>
-
 <div class="spacer"></div>  
 <nav class="nav"></nav>  
 <div class="title">Archivador</div>
@@ -522,17 +508,17 @@ carpeta.addEventListener('click', () => {
   setTimeout(() => {
 
     const confirmar = confirm(
-      "Pulse cancelar al instante para ejecutar MEGA en la app si está instalada, en caso contrario pulse cancelar después de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↓ (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
+      "Pulse cancelar al instante para ejecutar MEGA en la app si está instalada, en caso contrario pulse cancelar después de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↄ1�7 (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
     );
 
     if (confirmar) {
 
-      // ACEPTAR → descargar MEGA según el dispositivo
+      // ACEPTAR ↄ1�7 descargar MEGA según el dispositivo
       descargarMEGA();
 
     } else {
 
-      // CANCELAR → abrir directamente la URL de la carpeta
+      // CANCELAR ↄ1�7 abrir directamente la URL de la carpeta
       // MEGA decidirá automáticamente si abrir la aplicación
       // o continuar en el navegador.
       window.location.href =
