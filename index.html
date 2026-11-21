@@ -175,6 +175,13 @@ fill: none;
 display: block;
 }
 
+.header-buttons {
+  display: flex;
+  justify-content: left;
+  gap: 18px;
+  transform: translateY(-6px);
+}
+
     /* BOTONES CABECERA */
     .header-buttons button {
       padding: 0.5em 0.5em;
@@ -508,17 +515,17 @@ carpeta.addEventListener('click', () => {
   setTimeout(() => {
 
     const confirmar = confirm(
-      "Pulse cancelar al instante para ejecutar MEGA en la app si está instalada, en caso contrario pulse cancelar después de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↄ1�7 (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
+      "Pulse cancelar al instante para ejecutar MEGA en la app si está instalada, en caso contrario pulse cancelar después de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↄ1�71ￄ1�77 (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
     );
 
     if (confirmar) {
 
-      // ACEPTAR ↄ1�7 descargar MEGA según el dispositivo
+      // ACEPTAR ↄ1�71ￄ1�77 descargar MEGA según el dispositivo
       descargarMEGA();
 
     } else {
 
-      // CANCELAR ↄ1�7 abrir directamente la URL de la carpeta
+      // CANCELAR ↄ1�71ￄ1�77 abrir directamente la URL de la carpeta
       // MEGA decidirá automáticamente si abrir la aplicación
       // o continuar en el navegador.
       window.location.href =
@@ -803,5 +810,26 @@ document.querySelectorAll("[title]").forEach(elemento => {
 }
 
 </script>
+
+
+<script type="module">
+import {
+  glass,
+  attachPress
+} from "https://cdn.jsdelivr.net/npm/glassy-liquid@0.1.0/+esm";
+
+// BOTONES E-FLOW Y E-MASTER
+document.querySelectorAll(".header-buttons button").forEach(elemento => {
+  const superficie = glass(elemento, {
+    radius: 8,
+    material: "clear",
+    appearance: "dark",
+    refraction: 18
+  });
+
+  attachPress(elemento, superficie);
+});
+</script>
+
 
 </html>
