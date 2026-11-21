@@ -33,7 +33,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 filter: blur(100px);
 
-/* Animación combinada: movimiento + rotación */
+/* Animaci贸n combinada: movimiento + rotaci贸n */
 animation: blobAnimation 40s ease-in-out infinite alternate,
 colorChange 20s ease-in-out infinite alternate;
 }
@@ -43,7 +43,7 @@ colorChange 20s ease-in-out infinite alternate;
 .luma-blob.b2 { background: #007f00; animation-duration: 42s, 22s; }
 .luma-blob.b3 { background: #00007f; animation-duration: 36s, 20s; }
 
-/* Animación combinada: movimiento + giro */
+/* Animaci贸n combinada: movimiento + giro */
 @keyframes blobAnimation {
 0%   { transform: translate(-50%, -50%) translateX(-15%) translateY(-10%) scale(0.5) rotate(0deg); }
 25%  { transform: translate(-50%, -50%) translateX(10%) translateY(15%) scale(0.8) rotate(90deg); }
@@ -88,7 +88,7 @@ background-attachment: fixed;
 padding-top: clamp(72px, 10vh, 120px);
 }
 
-/* CABECERA TRANSLÚCIDA */
+/* CABECERA TRANSL脷CIDA */
 
 .glass-header { --mx: 50%; --my: 50%; position: fixed; top: 0; left: 0; right: 0; height: clamp(72px, 50vh, 150px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding: 12px clamp(16px, 5vw, 48px); z-index: 50; background: color-mix(in oklab, rgba(var(--bg)/var(--glass-alpha)), transparent); backdrop-filter: saturate(160%) blur(var(--blur)); -webkit-backdrop-filter: saturate(160%) blur(var(--blur)); border-bottom: 1px solid color-mix(in oklab, rgba(var(--ink)/.08), transparent); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px rgba(0,0,0,.06); overflow: clip; isolation: isolate; transform: translateY(-50px); opacity: 0; visibility: hidden; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease, visibility 0s linear 0.8s; }
 
@@ -110,7 +110,7 @@ main { flex-grow: 1; display: flex; justify-content: center; align-items: center
 
 @keyframes line-pulse-extend-1 { 0% { height: 30px; opacity: 0.6; box-shadow: 0 0 10px currentColor; } 50% { height: 95px; opacity: 1; box-shadow: 0 0 40px currentColor; } 100% { height: 90px; opacity: 0.9; box-shadow: 0 0 25px currentColor; } } @keyframes line-pulse-extend-2 { 0% { height: 35px; opacity: 0.7; box-shadow: 0 0 10px currentColor; } 50% { height: 105px; opacity: 1; box-shadow: 0 0 50px currentColor; } 100% { height: 100px; opacity: 0.9; box-shadow: 0 0 25px currentColor; } } @keyframes line-pulse-extend-3 { 0% { height: 28px; opacity: 0.5; box-shadow: 0 0 10px currentColor; } 50% { height: 90px; opacity: 0.9; box-shadow: 0 0 45px currentColor; } 100% { height: 85px; opacity: 0.8; box-shadow: 0 0 25px currentColor; } } @keyframes folder-glow { 0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); } 50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.5); } }
 
-/* Animación de entrada */
+/* Animaci贸n de entrada */
 @keyframes folder-pop-in { 0% { transform: scale(0.85) translateY(20px); opacity: 0; filter: blur(4px); } 60% { transform: scale(1.05) translateY(-5px); opacity: 1; filter: blur(0px); } 100% { transform: scale(1) translateY(0); opacity: 1; } }
 
 .folder-container-neon { position: relative; width: 280px; height: 300px; transition: transform 0.4s ease; perspective: 1500px; transform-style: preserve-3d; cursor: pointer; opacity: 0; transform: scale(0.9) translateY(20px); }
@@ -199,7 +199,7 @@ display: block;
       transform: scale(1.05);
     }
     
-    /* Posición Fase lunar */
+    /* Posici贸n Fase lunar */
     
     .lunarx {
     transform: translateY(-50%) translateX(15%);
@@ -271,6 +271,21 @@ display: block;
     opacity: .65;
   }
 }
+
+.header-buttons glass-button {
+  border-radius: 8px;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+
+
+glass-button{
+  touch-action: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
   </style>  
 </head>  
 <body>  <div id="luma-bg">  
@@ -282,10 +297,15 @@ display: block;
     
     </div> 
 
-    <!-- BOTONES DE REDIRECCIÓN -->
+    <!-- BOTONES DE REDIRECCI脫N -->
 <div class="header-buttons" style="display: flex; flex-direction: left; gap: ; grid-column: 1;">
-  <button style="background-color:#0000007a; color:#fff;" onclick="window.location.href='https://oraclewebeflow.netlify.app/'">E-Flow</button>
-  <button style="background-color:#0000007a; color:#fff;" onclick="window.location.href='https://oraclewebemaster.netlify.app/'">E-Master</button>
+<glass-button style="background-color:#0000007a; color:#fff; padding: 1px 10px;" onclick="window.location.href='https://oraclewebeflow.netlify.app/'">
+  <span>E-Flow</span>
+</glass-button>
+
+<glass-button style="background-color:#0000007a; color:#fff; padding: 1px 10px;" onclick="window.location.href='https://oraclewebemaster.netlify.app/'">
+  <span>E-Master</span>
+</glass-button>
 </div>
 
 <!-- Fase lunar -->
@@ -300,15 +320,15 @@ function moonPhaseEmoji(date = new Date()) {
   const daysSince = (date - knownNewMoon) / 86400000;
   const phase = ((daysSince % synodicMonth) + synodicMonth) % synodicMonth;
 
-  if (phase < 1.84566) return "🌑";
-  if (phase < 5.53699) return "🌒";
-  if (phase < 9.22831) return "🌓";
-  if (phase < 12.91963) return "🌔";
-  if (phase < 16.61096) return "🌕";
-  if (phase < 20.30228) return "🌖";
-  if (phase < 23.99361) return "🌗";
-  if (phase < 27.68493) return "🌘";
-  return "🌑";
+  if (phase < 1.84566) return "馃寫";
+  if (phase < 5.53699) return "馃寬";
+  if (phase < 9.22831) return "馃寭";
+  if (phase < 12.91963) return "馃寯";
+  if (phase < 16.61096) return "馃寱";
+  if (phase < 20.30228) return "馃寲";
+  if (phase < 23.99361) return "馃寳";
+  if (phase < 27.68493) return "馃寴";
+  return "馃寫";
 }
 
 // Mostrar Fase Lunar (Con SPAN)
@@ -472,7 +492,7 @@ el.addEventListener('touchmove', throttledMove);
 el.addEventListener('mouseleave', () => el.classList.remove('is-hot'));
 el.addEventListener('touchend', () => el.classList.remove('is-hot'));
 
-// Para que también responda cuando el mouse entra (útil en desktop)
+// Para que tambi茅n responda cuando el mouse entra (煤til en desktop)
 el.addEventListener('mouseenter', (ev) => {
 const clientX = ev.clientX || (window.innerWidth / 2);
 const clientY = ev.clientY || (window.innerHeight - 20);
@@ -483,7 +503,7 @@ updateLight(el, clientX, clientY);
 bindReactiveLight(header);
 bindReactiveLight(footer);
 
-// Hacemos el efecto de 'press' más consistente en touch y mouse
+// Hacemos el efecto de 'press' m谩s consistente en touch y mouse
 function addPressListeners(el){
 function onPointerDown(e){
 el.classList.add('pressed');
@@ -508,25 +528,25 @@ carpeta.classList.add('show'); // activa el pop-in de la carpeta
 }, 200);
 });
 
-// Redirección tras pulsar la carpeta
+// Redirecci贸n tras pulsar la carpeta
 carpeta.addEventListener('click', () => {
 
   // Esperar 3 segundos antes de mostrar el mensaje
   setTimeout(() => {
 
     const confirmar = confirm(
-      "Pulse cancelar al instante para ejecutar MEGA en la app si está instalada, en caso contrario pulse cancelar después de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos más recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusión + ↄ1�71ￄ1�77 (Flecha hacia abajo).\n\n¿Desea DESCARGAR la aplicación de MEGA?"
+      "Pulse cancelar al instante para ejecutar MEGA en la app si est谩 instalada, en caso contrario pulse cancelar despu茅s de 5 segundos para ejecutar MEGA en la web.\n\nEn la APP use ORDENAR POR ETIQUETA en cada directorio. MEGA desde la web no muestra el punto de etiquetado en los archivos. El punto de etiquetado muestra los archivos m谩s recientes. Para poder visualizar los archivos recientes marcados con un punto de etiquetado, descargue la app MEGA si no lo tiene instalado.\nEn el caso de la web, configure el orden de los archivos, en cada directorio: Fecha de inclusi贸n + 鈫�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7771锟�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7777 (Flecha hacia abajo).\n\n驴Desea DESCARGAR la aplicaci贸n de MEGA?"
     );
 
     if (confirmar) {
 
-      // ACEPTAR ↄ1�71ￄ1�77 descargar MEGA según el dispositivo
+      // ACEPTAR 鈫�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7771锟�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7777 descargar MEGA seg煤n el dispositivo
       descargarMEGA();
 
     } else {
 
-      // CANCELAR ↄ1�71ￄ1�77 abrir directamente la URL de la carpeta
-      // MEGA decidirá automáticamente si abrir la aplicación
+      // CANCELAR 鈫�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7771锟�1锟�71锟�1锟�771锟�1锟�71锟�1锟�7777 abrir directamente la URL de la carpeta
+      // MEGA decidir谩 autom谩ticamente si abrir la aplicaci贸n
       // o continuar en el navegador.
       window.location.href =
         'https://mega.nz/folder/XZw3XbqR#amH4T6JGZ3oFam8M90cm0Q';
@@ -539,7 +559,7 @@ carpeta.addEventListener('click', () => {
 
 
 // ========================================
-// DESCARGAR MEGA SEGÚN EL DISPOSITIVO
+// DESCARGAR MEGA SEG脷N EL DISPOSITIVO
 // ========================================
 
 function descargarMEGA() {
@@ -549,7 +569,7 @@ function descargarMEGA() {
 // ANDROID
 if (/Android/i.test(ua)) {
 
-  // Intentar abrir directamente la aplicación Google Play
+  // Intentar abrir directamente la aplicaci贸n Google Play
   window.location.href =
     'intent://details?id=mega.privacy.android.app#Intent;scheme=market;package=com.android.vending;end';
 
@@ -575,7 +595,7 @@ if (/Android/i.test(ua)) {
 
 /*
 ==================================================
-    🔴🟢🔵 INDICADORES NOVEDADES
+    馃敶馃煝馃數 INDICADORES NOVEDADES
 ==================================================
 */
 
@@ -585,7 +605,7 @@ marcar("48615937 D", "#00ff00");
 
 /*
 ==================================================
-    FUNCIÓN marcar()
+    FUNCI脫N marcar()
 ==================================================
 */
 
@@ -593,7 +613,7 @@ function marcar(palabra, color, fechaCaducidad) {
 
     /*
     ----------------------------------------------
-    Vencimiento fecha función
+    Vencimiento fecha funci贸n
     ----------------------------------------------
     */
 
@@ -603,14 +623,14 @@ function marcar(palabra, color, fechaCaducidad) {
 
         const dia = parseInt(partes[0], 10);
         const mes = parseInt(partes[1], 10) - 1;
-        const año = parseInt(partes[2], 10);
+        const a帽o = parseInt(partes[2], 10);
 
         /*
-        La fecha caduca una vez superado el límite.
+        La fecha caduca una vez superado el l铆mite.
         */
 
         const caducidad = new Date(
-            año,
+            a帽o,
             mes,
             dia + 1,
             0,
@@ -706,7 +726,7 @@ function marcar(palabra, color, fechaCaducidad) {
 
 
                 /*
-                Crear burbuja de notificación.
+                Crear burbuja de notificaci贸n.
                 */
 
                 const punto =
@@ -720,7 +740,7 @@ function marcar(palabra, color, fechaCaducidad) {
 
 
                 /*
-                Añadir en palabra
+                A帽adir en palabra
                 */
 
                 marcado.appendChild(punto);
@@ -774,7 +794,7 @@ document.querySelectorAll("[title]").forEach(elemento => {
         const contenedor = elemento.parentElement;
 
         /*
-        El contenedor será la referencia para posicionar el la burbuja.
+        El contenedor ser谩 la referencia para posicionar el la burbuja.
         */
 
         contenedor.style.position = "relative";
@@ -819,7 +839,7 @@ import {
 } from "https://cdn.jsdelivr.net/npm/glassy-liquid@0.1.0/+esm";
 
 // BOTONES E-FLOW Y E-MASTER
-document.querySelectorAll(".header-buttons button").forEach(elemento => {
+document.querySelectorAll(".header-buttons glass-button").forEach(elemento => {
   const superficie = glass(elemento, {
     radius: 8,
     material: "clear",
